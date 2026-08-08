@@ -40,9 +40,6 @@ export const metadata: Metadata = {
     "bar Tympaki Crete",
   ],
   applicationName: venue.name,
-  other: {
-    "codex-preview": "development",
-  },
   alternates: {
     canonical: "/",
     languages: {

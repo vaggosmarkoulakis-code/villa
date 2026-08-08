@@ -10,9 +10,10 @@ Bilingual (Greek primary, English second), two pages, no CMS.
 
 ## Stack
 
-React 19 + Next 16 (App Router) rendered through [vinext](https://github.com/cloudflare/vinext)
-on a Cloudflare Worker. Vite for the build, Tailwind v4 for the reset only —
-the design system is hand-written CSS in `app/globals.css`.
+React 19 + Next 16, App Router, deployed on Vercel. Every route prerenders to
+static HTML — there is no database, no API and no server state. Tailwind v4
+supplies the reset only; the design system is hand-written CSS in
+`app/globals.css`.
 
 ## Running it
 
@@ -24,11 +25,8 @@ npm install
 npm run dev
 ```
 
-`npm run build` runs a bounded build and validates the Worker artifact.
-`npm test` builds and then checks the rendered HTML. `npm run lint` runs ESLint.
-
-Node `>=22.13.0` is required. The build scripts are bash and need `curl`,
-`flock` and GNU `timeout`.
+`npm run build` produces the production build, `npm test` builds and then
+asserts against the prerendered HTML, `npm run lint` runs ESLint. Node 22.x.
 
 ## Where things live
 
@@ -40,7 +38,6 @@ Node `>=22.13.0` is required. The build scripts are bash and need `curl`,
 | `app/menu/MenuExplorer.tsx` | The filterable catalogue (the only stateful part). |
 | `public/textures/` | The four stone surfaces used as section backgrounds. |
 | `public/villa-scenes/` | Venue and dish photography. |
-| `worker/index.ts` | Cloudflare Worker entry, including image optimization. |
 
 ## Design notes
 

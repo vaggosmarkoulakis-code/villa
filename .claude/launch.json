@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "villa-dev",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["vite"],
-      "port": 5173
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }
